@@ -46,9 +46,7 @@ const glassdoorUrl = `https://www.glassdoor.de/Job/{jobTitle}-{location}-jobs-SR
 // Function to scrape a single page with user-specified job title and location
 async function scrapePage(pageNumber, jobTitle, location) {
     // Replace placeholders in the base URL
-   
-
-    const pageUrl = `https://www.glassdoor.de/Job/${location.trim().replace(/\s+/g, '-').toLowerCase()}-${jobTitle.trim().replace(/\s+/g, '-').toLowerCase()}-jobs-SRCH_IL.0,29_KO30,47.htm?p=${pageNumber}`;
+    const pageUrl = `https://www.glassdoor.de/Job/jobs.htm?sc.keyword=${encodeURIComponent(jobTitle)}&locT=C&locId=&locKeyword=${encodeURIComponent(location)}&jobType=&p=${pageNumber}`;
     const scraperApiUrl = `http://api.scraperapi.com/?api_key=${apiKey}&url=${encodeURIComponent(pageUrl)}&premium=true`;
 
 
