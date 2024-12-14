@@ -41,7 +41,7 @@ const Job = mongoose.models.GlassdoorJob || mongoose.model('GlassdoorJob', jobSc
 
 // API key and base Glassdoor URL
 const apiKey = '20e627e4cb8068c6ec82d73c9f6c469f';
-const glassdoorUrl = 'https://www.glassdoor.de/Job/frankfurt-am-main-deutschland-software-engineer-jobs-SRCH_IL.0,29_IC2632180_KO30,47.htm';
+const glassdoorUrl = `https://www.glassdoor.de/Job/{jobTitle}-{location}-jobs-SRCH_KO30,47.htm`;
 
 // Function to scrape a single page with user-specified job title and location
 async function scrapePage(pageNumber, jobTitle, location) {
